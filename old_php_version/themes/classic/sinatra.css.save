@@ -1,0 +1,110 @@
+/*
+
+Sinatra.
+Musica para las masas
+B&L + Contraculto + Iletelier + MPD.
+
+01: CSS Resets.
+02: Typography.
+03: Helper classes.
+04: Basic Structure.
+06: Header.
+07: Footer.
+08: Main Content.
+
+*/
+
+/* - - - - - - - - - - - - - - - - - - * 01: CSS Resets */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent}
+body{line-height:1}
+ol, ul{list-style:none}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after, q:before, q:after{content:''; content:none}
+
+/* - - - - - - - - - - - - - - - - - - * 02: Typography. */
+
+body{line-height:20px;font-size:13px;background:#fff;color:#333}
+.sans{font-family:'Myriad Pro',Calibri,'Helvetica Neue',Helvetica,'Bitstream Vera Sans',Arial,sans-serif}
+.serif{font-family:'Linux Libertine',Palatino,'Palatino Linotype','Book Antiqua',Georgia ,'Times New Roman',serif}
+.mono{font-family:'Courier New',Courier,Monaco,'Lucida Console','Nimbus Mono L',FreeMono}
+strong{font-weight:bold}em{font-style:italic}small{font-size:11px}
+h1,h2,h3,h4,h5,h6{font-weight:bold}h1{line-height:30px;font-size:25px}h2{line-height:30px;font-size:23px}h3{line-height:30px;font-size:19px}h4{font-size:17px}h5{font-size:15px}h6{font-size:13px}p{font-size:13px}
+blockquote{margin-bottom:20px;font-style:italic}
+ol li{margin-bottom:20px;list-style-type:decimal}ul li{margin-bottom:20px;list-style-type:disc}
+a{color:#36648c;text-decoration:none}a:hover{color:#36648c;text-decoration:underline;cursor:pointer}
+
+/* - - - - - - - - - - - - - - - - - - *  03: Helper classes. */
+
+.alignleft{text-align:left}.aligncenter{text-align:center}.alignright{text-align:right}
+.floatleft{float:left}.floatright{float:right}
+.error, .notice{margin-bottom:10px;padding:5px;text-align:center;font-weight:bold}
+.error{background:rgba(246,96,105,0.6)}
+.notice{background:rgba(166,204,71,0.6)}
+.error p, .notice p{margin-bottom:0 !important}
+/* - - - - - - - - - - - - - - - - - - *  04: Basic Structure. */
+
+body{margin:20px;text-align:left;background:#fff url(img/background.jpg) right top no-repeat;}
+#wrapper{padding:20px;background:rgba(255,255,255,0.7);font-family:'Myriad Pro',Calibri,'Helvetica Neue',Helvetica,'Bitstream Vera Sans',Arial,sans-serif;float:left}
+body.login #wrapper{width:300px;}
+body.dashboard #wrapper{width:500px;}
+
+/* - - - - - - - - - - - - - - - - - - * 05: Header. */
+
+#header{margin-bottom:20px;text-align:center}
+
+/* - - - - - - - - - - - - - - - - - - * 06: Content. */
+
+#content{}
+#content p{margin-bottom:10px}
+
+/* - - - - - - - - - - - - - - - - - - * 06: Login. */
+
+#login input{border:none;background:rgba(0,0,0,0.1);padding:4px;width:290px}
+#login input#login_entrar{width:300px}
+#login input#login_entrar:hover{width:300px;background:rgba(0,0,0,0.5);color:#fff}
+
+/* - - - - - - - - - - - - - - - - - - * 07.Classes: Dashboard. */
+
+.ctrl_admin{text-align: left;margin-right:15px};
+
+
+/* - - - - - - - - - - - - - - - - - - * 07.Selectores: Dashboard. */
+
+#logout {overflow: hidden}
+#logout form{display:inline-block;float:right;}
+#logout form input{background:none repeat scroll 0 0 #333333;border:medium none;color:#FFFFFF;font-size:10px;font-weight:bold;height:20px;width:40px;}
+#logout form input:hover{cursor:pointer;color:#aa0000}
+
+#admin_controls{overflow:hidden;margin-bottom:10px}
+#admin_controls form{display:inline-block;text-align: left;margin-right:10px}
+#admin_controls form input{background:none repeat scroll 0 0 #333333;border:medium none;color:#FFFFFF;font-size:10px;font-weight:bold;height:16px;width:43px;}
+#admin_controls form input:hover{cursor:pointer;color:#aa0000}
+
+#current, #votes{margin-bottom:20px;}
+
+#current p{margin-bottom:5px}
+#current_info{margin-bottom:5px;line-height:25px;font-size:25px;font-weight:bold}
+
+#music_control{width:300px;}
+
+#next{float:left;margin-top:10px;text-align:right;width:425px;}
+#next_submit{border:0;background:transparent url(img/heart.png) center top no-repeat;width:45px;height:44px}
+#next_submit:hover{background-position:0 -44px;cursor:pointer;}
+
+#like{float:left;margin-left:30px;margin-top:10px;text-align:right;}
+#like_submit{border:0;background:transparent url(img/heartlike.png) center top no-repeat;width:45px;height:44px}
+#like_submit:hover{background-position:0 -44px;cursor:pointer;}
+
+#votes p{margin-bottom:5px}
+
+#volume{overflow:hidden}
+#volume a{margin: 0 7px}
+
+/* - - - - - - - - - - - - - - - - - - * 08 Player. */
+#player{background:none repeat scroll 0 0 rgba(255, 255, 255, 0.7);float:left;font-family:'Myriad Pro',Calibri,'Helvetica Neue',Helvetica,'Bitstream Vera Sans',Arial,sans-serif;height:30px;margin:-20px 0 0;padding:20px 10px 7px 18px;width:200px;}
+
+#playertoggler {overflow: hidden;background:none repeat scroll 0 0 #333333; width: 20px}
+#playertoggler button{display:inline-block;}
+#playertoggler button{background: none;border:medium none;color:#FFFFFF;font-size:10px;font-weight:bold;height:20px;width:20px; text-align: center}
+#playertoggler button:hover{cursor:pointer;color:#aa0000}
